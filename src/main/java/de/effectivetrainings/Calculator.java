@@ -1,6 +1,7 @@
 package de.effectivetrainings;
 
 import de.effectivetrainings.operation.Operation;
+import de.effectivetrainings.operation.Set;
 
 public class Calculator {
 
@@ -8,6 +9,10 @@ public class Calculator {
 
 	private Double lastResult = 0d;
 
+	public Calculator() {
+		registry.set(new Set());
+	}
+	
 	public Double calculate(String operationIdentifier, Double a, Double b) {
 		Operation operation = findOperation(operationIdentifier);
 		a = a == null ? lastResult : a;
@@ -15,6 +20,14 @@ public class Calculator {
 		return lastResult;
 	}
 
+	public void set(Double number) {
+		this.lastResult = number;
+	}
+	
+	public void reset() {
+		set(0d);
+	}
+	
 	public void registerOperation(Operation operation) {
 		registry.set(operation);
 	}
