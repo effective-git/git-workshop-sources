@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class InputMatcher {
 
-	private static final String inputPattern = "\\s*(\\d*)\\s*(\\W+|\\w+|\\b+)\\s*(\\d+)\\s*";
+	private static final String inputPattern = "\\s*(\\d*)\\s*(\\W+|\\w+|\\b+)\\s*(\\d*)\\s*";
 
 	private static Pattern pattern = Pattern.compile(inputPattern);
 
@@ -31,10 +31,9 @@ public class InputMatcher {
 		operation = matcher.group(2).trim();
 		// operand B is mandatory
 		String rawOperandB = matcher.group(3);
-		// operand b cannot be null (see regexp)
-		// if(rawOperandB != null) {
-		operandB = Double.parseDouble(rawOperandB);
-		// }
+		if(rawOperandB != null && !rawOperandB.isEmpty()) {
+			operandB = Double.parseDouble(rawOperandB);
+		}
 	}
 
 	public Double getOperandA() {
