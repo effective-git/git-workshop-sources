@@ -3,6 +3,7 @@ package de.effectivetrainings;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.effectivetrainings.InputMatcher;
@@ -36,11 +37,6 @@ public class InputMatcherTest {
 		assertEquals("+", matcher.getOperation());
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
-	public void matchSimpleInput_withMissingOperandB() {
-		new InputMatcher(" 1 + ");
-	}
-	
 	@Test
 	public void matchInputWithLongerNumbers() {
 		InputMatcher matcher = new InputMatcher(" 10598 * 20344 ");
@@ -71,5 +67,14 @@ public class InputMatcherTest {
 		assertEquals(new Double(12), matcher.getOperandA());
 		assertEquals(new Double(6), matcher.getOperandB());
 		assertEquals("halbsovielwie", matcher.getOperation());
+	}
+	
+	@Ignore(value = "enable when double precision is activated")
+	@Test
+	public void matchInput_withDoublePrecision() {
+		InputMatcher matcher = new InputMatcher("12.5 *  6.5");
+		assertEquals(new Double(12.5), matcher.getOperandA());
+		assertEquals(new Double(6.5), matcher.getOperandB());
+		assertEquals("*", matcher.getOperation());
 	}
 }
