@@ -3,6 +3,9 @@ package de.effectivetrainings;
 import de.effectivetrainings.operation.Operation;
 import de.effectivetrainings.operation.Set;
 
+import java.util.List;
+
+
 public class Calculator {
 
 	private OperationRegistry registry = new OperationRegistry();
@@ -11,12 +14,16 @@ public class Calculator {
 
 	public Calculator() {
 		registry.set(new Set());
+		registry.set(new de.effectivetrainings.operation.List(this));
 	}
 	
 	public Double calculate(String operationIdentifier, Double a, Double b) {
 		Operation operation = findOperation(operationIdentifier);
 		a = a == null ? lastResult : a;
-		lastResult = operation.perform(a, b);
+		Double operationResult = operation.perform(a, b);
+		if(operationResult != null) {
+			lastResult = operationResult;
+		}
 		return lastResult;
 	}
 
@@ -27,7 +34,11 @@ public class Calculator {
 	public void reset() {
 		set(0d);
 	}
-	
+
+	public Double get() {
+		return lastResult;
+	}
+
 	public void registerOperation(Operation operation) {
 		registry.set(operation);
 	}
@@ -40,5 +51,9 @@ public class Calculator {
 							+ operationIdentifier);
 		}
 		return operation;
+	}
+
+	public List<Operation> operations() {
+		return registry.operations();
 	}
 }

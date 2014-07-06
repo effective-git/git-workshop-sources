@@ -1,9 +1,11 @@
 package de.effectivetrainings;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import de.effectivetrainings.operation.Operation;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class OperationRegistry {
 
@@ -20,5 +22,10 @@ public class OperationRegistry {
 					+ " already registered");
 		}
 		operations.put(operation.getOperationIdentifier(), operation);
+	}
+
+	public List<Operation> operations()
+	{
+		return new ArrayList<Operation>(operations.values());
 	}
 }
