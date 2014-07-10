@@ -1,6 +1,7 @@
 package de.effectivetrainings;
 
 import de.effectivetrainings.operation.Add;
+import de.effectivetrainings.operation.Cos;
 import de.effectivetrainings.operation.Div;
 import de.effectivetrainings.operation.Half;
 import de.effectivetrainings.operation.Minus;
@@ -8,6 +9,7 @@ import de.effectivetrainings.operation.Mod;
 import de.effectivetrainings.operation.Mult;
 import de.effectivetrainings.operation.Neg;
 import de.effectivetrainings.operation.Quadrat;
+import de.effectivetrainings.operation.Sin;
 import de.effectivetrainings.operation.Sqrt;
 
 import java.util.Scanner;
@@ -49,6 +51,9 @@ public class CalculatorApp {
 		calculator.registerOperation(new Half());
 		calculator.registerOperation(new Quadrat());
 		calculator.registerOperation(new Sqrt());
+		calculator.registerOperation(new Sin());
+		calculator.registerOperation(new Cos());
+
 
 		//
 		// register operations here
