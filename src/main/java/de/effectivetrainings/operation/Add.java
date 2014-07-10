@@ -10,7 +10,7 @@ public class Add implements Operation
 	@Override
 	public Double perform(Double operandA, Double operandB)
 	{
-		return operandA + operandA;
+		return operandA + operandB;
 	}
 
 	@Override

@@ -10,7 +10,7 @@ public class Quadrat implements Operation
 	@Override
 	public Double perform(Double operandA, Double operandB)
 	{
-		return operandA * operandB;
+		return operandA * operandA;
 	}
 
 	@Override
