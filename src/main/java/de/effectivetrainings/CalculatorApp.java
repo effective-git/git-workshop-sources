@@ -1,6 +1,7 @@
 package de.effectivetrainings;
 
 import de.effectivetrainings.operation.Add;
+import de.effectivetrainings.operation.Div;
 import de.effectivetrainings.operation.Minus;
 import de.effectivetrainings.operation.Mult;
 
@@ -37,6 +38,7 @@ public class CalculatorApp {
 		calculator.registerOperation(new Add());
 		calculator.registerOperation(new Minus());
 		calculator.registerOperation(new Mult());
+		calculator.registerOperation(new Div());
 
 		//
 		// register operations here
