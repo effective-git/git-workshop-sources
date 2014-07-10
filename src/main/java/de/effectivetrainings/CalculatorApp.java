@@ -1,6 +1,7 @@
 package de.effectivetrainings;
 
 import de.effectivetrainings.operation.Add;
+import de.effectivetrainings.operation.Minus;
 
 import java.util.Scanner;
 
@@ -33,6 +34,7 @@ public class CalculatorApp {
 	private static Calculator initializeCalculator() {
 		Calculator calculator = new Calculator();
 		calculator.registerOperation(new Add());
+		calculator.registerOperation(new Minus());
 
 		//
 		// register operations here
