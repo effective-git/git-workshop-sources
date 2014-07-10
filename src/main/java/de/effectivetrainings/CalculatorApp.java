@@ -1,6 +1,7 @@
 package de.effectivetrainings;
 
 import de.effectivetrainings.operation.Add;
+import de.effectivetrainings.operation.Bool;
 import de.effectivetrainings.operation.Cos;
 import de.effectivetrainings.operation.Div;
 import de.effectivetrainings.operation.Half;
@@ -53,6 +54,7 @@ public class CalculatorApp {
 		calculator.registerOperation(new Sqrt());
 		calculator.registerOperation(new Sin());
 		calculator.registerOperation(new Cos());
+		calculator.registerOperation(new Bool());
 
 
 		//
