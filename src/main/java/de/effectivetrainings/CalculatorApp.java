@@ -2,6 +2,7 @@ package de.effectivetrainings;
 
 import de.effectivetrainings.operation.Add;
 import de.effectivetrainings.operation.Minus;
+import de.effectivetrainings.operation.Mult;
 
 import java.util.Scanner;
 
@@ -35,6 +36,7 @@ public class CalculatorApp {
 		Calculator calculator = new Calculator();
 		calculator.registerOperation(new Add());
 		calculator.registerOperation(new Minus());
+		calculator.registerOperation(new Mult());
 
 		//
 		// register operations here
