@@ -7,6 +7,7 @@ import de.effectivetrainings.operation.Minus;
 import de.effectivetrainings.operation.Mod;
 import de.effectivetrainings.operation.Mult;
 import de.effectivetrainings.operation.Neg;
+import de.effectivetrainings.operation.Quadrat;
 
 import java.util.Scanner;
 
@@ -45,6 +46,7 @@ public class CalculatorApp {
 		calculator.registerOperation(new Mod());
 		calculator.registerOperation(new Neg());
 		calculator.registerOperation(new Half());
+		calculator.registerOperation(new Quadrat());
 
 		//
 		// register operations here
