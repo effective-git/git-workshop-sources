@@ -1,17 +1,6 @@
 package de.effectivetrainings;
 
-import de.effectivetrainings.operation.Add;
-import de.effectivetrainings.operation.Bool;
-import de.effectivetrainings.operation.Cos;
-import de.effectivetrainings.operation.Div;
-import de.effectivetrainings.operation.Half;
-import de.effectivetrainings.operation.Minus;
-import de.effectivetrainings.operation.Mod;
-import de.effectivetrainings.operation.Mult;
-import de.effectivetrainings.operation.Neg;
-import de.effectivetrainings.operation.Quadrat;
-import de.effectivetrainings.operation.Sin;
-import de.effectivetrainings.operation.Sqrt;
+import de.effectivetrainings.operation.*;
 
 import java.util.Scanner;
 
@@ -43,7 +32,6 @@ public class CalculatorApp {
 	 */
 	private static Calculator initializeCalculator() {
 		Calculator calculator = new Calculator();
-		calculator.registerOperation(new Add());
 		calculator.registerOperation(new Minus());
 		calculator.registerOperation(new Mult());
 		calculator.registerOperation(new Div());
